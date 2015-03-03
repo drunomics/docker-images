@@ -9,22 +9,23 @@ apt-get update && \
 apt-get install -y ansible git
 RUN echo '[local]\nlocalhost ansible_connection=local\n' > /etc/ansible/hosts
 
-WORKDIR /root/
-RUN mkdir .ssh
+RUN mkdir /root/.ssh
 RUN ssh-keyscan bitbucket.org  >> /root/.ssh/known_hosts
 RUN ssh-keyscan github.com  >> /root/.ssh/known_hosts
 
-
-RUN mkdir -p /root/docker/drunomics-lamp
-RUN mkdir -p /root/playbooks
-
-WORKDIR /root
-ADD requirements.yml docker/drunomics-lamp/
-ADD drunomics-lamp.yml playbooks/
+ADD requirements.yml /root/docker/drunomics-lamp/
+ADD drunomics-lamp.yml /root/playbooks/
 
 WORKDIR /root/docker/drunomics-lamp
 RUN ansible-galaxy install -r requirements.yml --force
 
-#run the playbooks
+# Fix issues with connecting to upstart, see
+# https://github.com/docker/docker/issues/1024
+RUN dpkg-divert --local --rename --add /sbin/initctl && ln -s /bin/true /sbin/initctl
+
+# Run the playbooks.
 WORKDIR /root/playbooks
 RUN ansible-playbook drunomics-lamp.yml
+
+# Restore initct.
+RUN rm /sbin/initctl && mv /sbin/initctl.distrib /sbin/initctl
