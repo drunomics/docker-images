@@ -9,6 +9,11 @@
 - src: https://github.com/drunomics/ansible-role-maildev-apache
   name: drunomics.maildev-apache
 
+  # Make sure the latest version is used.
+- src: https://github.com/knopki/ansible-nullmailer.git
+  name: knopki.nullmailer
+  version: master
+
 - src: https://github.com/drunomics/ansible-role-nullmailer
   name: drunomics.nullmailer
 
