@@ -1,0 +1,38 @@
+---
+
+- src: https://github.com/drunomics/ansible-role-apache
+  name: drunomics.apache
+
+- src: https://github.com/drunomics/ansible-role-maildev
+  name: drunomics.maildev
+
+- src: https://github.com/drunomics/ansible-role-maildev-apache
+  name: drunomics.maildev-apache
+
+- src: https://github.com/drunomics/ansible-role-nullmailer
+  name: drunomics.nullmailer
+
+- src: https://github.com/drunomics/ansible-role-redis
+  name: drunomics.redis
+
+- src: https://github.com/drunomics/ansible-role-ssh
+  name: drunomics.ssh
+
+- src: https://github.com/drunomics/ansible-role-base
+  name: drunomics.base
+
+- src: https://github.com/drunomics/ansible-role-mysql
+  name: drunomics.mysql
+
+- src: https://github.com/drunomics/ansible-role-drush
+  name: drunomics.drush
+
+- src: https://github.com/drunomics/ansible-role-php
+  name: drunomics.php
+
+- src: https://github.com/drunomics/ansible-role-lamp
+  name: drunomics.lamp
+
+- src: kosssi.composer
+
+

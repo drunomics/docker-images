@@ -1,0 +1,10 @@
+---
+- hosts: local
+  roles: 
+    - { role: drunomics.base, tags: base }
+    - { role: drunomics.ssh, tags: ssh }
+    - { role: drunomics.lamp, tags: lamp }
+    #  knopki nullmailer has some template error. needs fixing.
+    #- { role: drunomics.nullmailer, tags: nullmailer }
+    #- { role: drunomics.maildev-apache, tags: maildev }
+    - { role: drunomics.redis, tags: redis }
