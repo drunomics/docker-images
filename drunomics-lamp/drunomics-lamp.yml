@@ -6,4 +6,3 @@
     - { role: drunomics.lamp, tags: lamp }
     - { role: drunomics.nullmailer, tags: nullmailer }
     - { role: drunomics.maildev-apache, tags: maildev }
-    - { role: drunomics.redis, tags: redis }
