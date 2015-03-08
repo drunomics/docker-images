@@ -1,0 +1,5 @@
+---
+
+- src: https://github.com/hatsch/ansible-role-solr
+  name: yoshz.solr
+
