@@ -28,4 +28,6 @@ WORKDIR /root/playbooks
 RUN ansible-playbook drunomics-lamp.yml
 
 # Restore initct.
-RUN rm /sbin/initctl && mv /sbin/initctl.distrib /sbin/initctl
+RUN rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl
+
+RUN apt-get clean && apt-get autoclean -y && apt-get autoremove -y
