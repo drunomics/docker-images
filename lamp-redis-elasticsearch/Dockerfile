@@ -1,10 +1,10 @@
 FROM drunomics/lamp-redis:latest
-MAINTAINER Stefan Hageneder <hatsch@gmail.com>
+MAINTAINER Stefan Hageneder <stefan.hageneder@drunomcis.com>
 
-ADD requirements.yml /root/docker/drunomics-lamp-redis-elasticsearch/
-ADD drunomics-lamp-redis-elasticsearch.yml /root/playbooks/
+ADD requirements.yml /root/docker/lamp-redis-elasticsearch/
+ADD elasticsearch.yml /root/playbooks/
 
-WORKDIR /root/docker/drunomics-lamp-redis-elasticsearch
+WORKDIR /root/docker/lamp-redis-elasticsearch
 RUN ansible-galaxy install -r requirements.yml --force
 
 # Fix issues with connecting to upstart, see
@@ -13,7 +13,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/i
 
 # Run the playbooks.
 WORKDIR /root/playbooks
-RUN ansible-playbook drunomics-lamp-redis-elasticsearch.yml
+RUN ansible-playbook elasticsearch.yml
 
 # Restore initct.
 RUN rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl

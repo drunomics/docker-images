@@ -1,10 +1,10 @@
 FROM drunomics/lamp:latest
-MAINTAINER Stefan Hageneder <hatsch@gmail.com>
+MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
 
-ADD requirements.yml /root/docker/drunomics-lamp-redis/
-ADD drunomics-lamp-redis.yml /root/playbooks/
+ADD requirements.yml /root/docker/lamp-redis/
+ADD redis.yml /root/playbooks/
 
-WORKDIR /root/docker/drunomics-lamp-redis
+WORKDIR /root/docker/lamp-redis
 RUN ansible-galaxy install -r requirements.yml --force
 
 # Fix issues with connecting to upstart, see
@@ -13,7 +13,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/i
 
 # Run the playbooks.
 WORKDIR /root/playbooks
-RUN ansible-playbook drunomics-lamp-redis.yml
+RUN ansible-playbook redis.yml
 
 # Restore initct.
 RUN rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl

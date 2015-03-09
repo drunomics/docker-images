@@ -1,5 +1,5 @@
 FROM ubuntu-upstart:14.04
-MAINTAINER Stefan Hageneder <hatsch@gmail.com>
+MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
 
 # Install Ansible and git
 RUN apt-get update && \
@@ -13,10 +13,10 @@ RUN mkdir /root/.ssh
 RUN ssh-keyscan bitbucket.org  >> /root/.ssh/known_hosts
 RUN ssh-keyscan github.com  >> /root/.ssh/known_hosts
 
-ADD requirements.yml /root/docker/drunomics-lamp/
-ADD drunomics-lamp.yml /root/playbooks/
+ADD requirements.yml /root/docker/lamp/
+ADD lamp.yml /root/playbooks/
 
-WORKDIR /root/docker/drunomics-lamp
+WORKDIR /root/docker/lamp
 RUN ansible-galaxy install -r requirements.yml --force
 
 # Fix issues with connecting to upstart, see
@@ -25,7 +25,7 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && ln -s /bin/true /sbin/in
 
 # Run the playbooks.
 WORKDIR /root/playbooks
-RUN ansible-playbook drunomics-lamp.yml
+RUN ansible-playbook lamp.yml
 
 # Restore initct.
 RUN rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl
