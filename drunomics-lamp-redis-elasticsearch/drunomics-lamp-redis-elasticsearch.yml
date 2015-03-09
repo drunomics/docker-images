@@ -1,4 +1,5 @@
 ---
 - hosts: local
-  roles: 
+  roles:
+    - { role: drunomics.java, base_java_openjdk: true , tags: solr }
     - { role: drunomics.elasticsearch, tags: elasticsearch }
