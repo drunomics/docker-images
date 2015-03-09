@@ -18,4 +18,4 @@ RUN ansible-playbook solr.yml
 # Restore initct.
 RUN rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl
 
-RUN apt-get clean && apt-get autoclean -y && apt-get autoremove -y
+RUN apt-get clean && apt-get autoclean -y && apt-get autoremove -y && rm -rf /root/solr*
