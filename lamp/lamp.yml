@@ -4,5 +4,6 @@
     - { role: drunomics.base, tags: base }
     - { role: drunomics.ssh, tags: ssh }
     - { role: drunomics.lamp, tags: lamp }
+    - { role: drunomics.drush, tags: drush }
     - { role: drunomics.nullmailer, tags: nullmailer }
     - { role: drunomics.maildev-apache, tags: maildev }
