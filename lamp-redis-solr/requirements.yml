@@ -1,8 +1,5 @@
 ---
 
-- src: https://github.com/drunomics/ansible-role-java
-  name: drunomics.java
-
 - src: https://github.com/drunomics/ansible-role-solr
   name: drunomics.solr
 
