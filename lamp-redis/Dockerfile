@@ -9,11 +9,16 @@ RUN cd /root/docker/lamp-redis && \
 
   # Fix issues with connecting to upstart, see
   # https://github.com/docker/docker/issues/1024
-  RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl && \
+  dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl && \
 
   # Run the playbooks.
   cd /root/playbooks && \
   ansible-playbook redis.yml && \
 
-  # Restore initct.
-  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl
+  # Restore initctl.
+  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
+
+  # Clean tmp dirs.
+  rm -rf /tmp/* /var/tmp/*
+
+VOLUME /var/lib/redis

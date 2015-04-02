@@ -11,9 +11,18 @@ RUN cd /root/docker/lamp-redis-solr && \
   # https://github.com/docker/docker/issues/1024
   dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl && \
 
+  # Temporary fix for https://github.com/ansible/ansible/issues/5307,
+  # remove once Ansible 1.9.0-2 is available.
+  ln -s /etc/ansible/roles/drunomics.solr/files/1.6-solr-conf-4.x /root/playbooks/1.6-solr-conf-4.x && \
+
   # Run the playbooks.
   cd /root/playbooks && \
   ansible-playbook solr.yml && \
 
-  # Restore initct.
-  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl
+  # Restore initctl.
+  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
+
+  # Clean tmp dirs.
+  rm -rf /tmp/* /var/tmp/*
+
+VOLUME /var/data/solr
