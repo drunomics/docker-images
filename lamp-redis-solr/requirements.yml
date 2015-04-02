@@ -3,6 +3,9 @@
 - src: https://github.com/drunomics/ansible-role-java
   name: drunomics.java
 
+- src: https://github.com/drunomics/ansible-role-solr
+  name: drunomics.solr
+
 - src: https://github.com/hatsch/ansible-role-solr
   name: yoshz.solr
 
