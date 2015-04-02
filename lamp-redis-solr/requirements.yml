@@ -4,5 +4,5 @@
   name: drunomics.solr
 
 - src: https://github.com/hatsch/ansible-role-solr
-  name: yoshz.solr
+  name: yoshzz.solr
 
