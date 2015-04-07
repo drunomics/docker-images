@@ -11,4 +11,4 @@ The Images are built using ansible. Currently we provide 4 different base Images
 [LAMP + REDIS + ElasticSearch](/lamp-redis-elasticsearch/README.md)
 
 
-(c) 2015 drunomics GmbH. under MIT License 
+(c) 2015 drunomics GmbH. /  MIT License 
