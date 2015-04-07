@@ -23,6 +23,9 @@ RUN cd /root/docker/lamp-redis-solr && \
   rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
 
   # Clean tmp dirs.
-  rm -rf /tmp/* /var/tmp/*
+  rm -rf /tmp/* /var/tmp/* && \
+
+  # Save disk space by removing temporar solr files.
+  rm -rf /root/solr-*
 
 VOLUME /var/data/solr

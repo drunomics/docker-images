@@ -31,6 +31,9 @@ RUN cd /root/docker/lamp && \
   rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
 
   # Clean tmp dirs.
-  rm -rf /tmp/* /var/tmp/*
+  rm -rf /tmp/* /var/tmp/* && \
+
+  # Save disk space by removing inno db logfiles.
+  rm /var/lib/mysql/ib_logfile*
 
 VOLUME /var/lib/mysql
