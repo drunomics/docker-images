@@ -2,15 +2,13 @@
 - hosts: local
   vars:
     - composer_path_env: true
+    - composer_register_global_bin: true
+    - nullmailer_remotes: 127.0.0.1 smtp --port=1025
   roles: 
     - { role: drunomics.base, tags: base }
     - { role: drunomics.ssh, tags: ssh }
     - { role: drunomics.lamp, tags: lamp }
     - { role: drunomics.nullmailer, tags: nullmailer }
     - { role: drunomics.maildev-apache, tags: maildev }
-    - role: kosssi.composer
-      composer_register_global_bin: true
-      composer_path_env: true
-    - role: drunomics.drush
-      tags: drush
-      composer_register_global_bin: true
+    - { role: kosssi.composer, tags: composer }
+    - { role: drunomics.drush, tags: drush }
