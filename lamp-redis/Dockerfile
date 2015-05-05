@@ -15,9 +15,6 @@ RUN cd /root/docker/lamp-redis && \
   cd /root/playbooks && \
   ansible-playbook redis.yml && \
 
-  # Restore initctl.
-  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
-
   # Clean tmp dirs.
   rm -rf /tmp/* /var/tmp/*
 
