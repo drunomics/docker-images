@@ -27,6 +27,9 @@ RUN cd /root/docker/lamp && \
   cd /root/playbooks && \
   ansible-playbook lamp.yml && \
 
+  # Restore initctl.
+  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
+
   # Clean tmp dirs.
   rm -rf /tmp/* /var/tmp/* && \
 

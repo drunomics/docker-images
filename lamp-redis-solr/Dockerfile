@@ -19,6 +19,9 @@ RUN cd /root/docker/lamp-redis-solr && \
   cd /root/playbooks && \
   ansible-playbook solr.yml && \
 
+  # Restore initctl.
+  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
+
   # Clean tmp dirs.
   rm -rf /tmp/* /var/tmp/* && \
 

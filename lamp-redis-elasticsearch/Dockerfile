@@ -15,5 +15,8 @@ RUN cd /root/docker/lamp-redis-elasticsearch && \
   cd /root/playbooks && \
   ansible-playbook elasticsearch.yml && \
 
+  # Restore initctl.
+  rm /sbin/initctl && cp /sbin/initctl.distrib /sbin/initctl && \
+
   # Clean tmp dirs.
   rm -rf /tmp/* /var/tmp/*
