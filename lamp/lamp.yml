@@ -4,6 +4,7 @@
     - composer_path_env: true
     - composer_register_global_bin: true
     - nullmailer_remotes: 127.0.0.1 smtp --port=1025
+    - base_rsyslogd_custom_init: true
   roles: 
     - { role: drunomics.base, tags: base }
     - { role: drunomics.ssh, tags: ssh }
