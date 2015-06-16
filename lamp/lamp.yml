@@ -13,3 +13,12 @@
     - { role: drunomics.maildev-apache, tags: maildev }
     - { role: kosssi.composer, tags: composer }
     - { role: drunomics.drush, tags: drush }
+
+  tasks:
+    - name: Execute provision script.
+      shell: |
+        {%- for command in provision_script -%}
+          {{ command }}
+        {%- endfor -%}
+      when: provision_script is defined
+      tags: provision-script
