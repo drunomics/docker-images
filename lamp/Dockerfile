@@ -34,6 +34,6 @@ RUN cd /root/docker/lamp && \
   rm -rf /tmp/* /var/tmp/* && \
 
   # Save disk space by removing inno db logfiles.
-  rm /var/lib/mysql/ib_logfile*
+  rm -f /var/lib/mysql/ib_logfile*
 
 VOLUME /var/lib/mysql
