@@ -1,0 +1,5 @@
+---
+
+- src: https://github.com/drunomics/ansible-role-memcached
+  name: drunomics.memcached
+
