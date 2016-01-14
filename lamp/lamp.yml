@@ -6,6 +6,7 @@
     - nullmailer_remotes: 
         - 127.0.0.1 smtp --port=1025
     - base_rsyslogd_custom_init: true
+    - drush_add_system_launcher: true
   roles: 
     - { role: drunomics.base, tags: base }
     - { role: drunomics.ssh, tags: ssh }
