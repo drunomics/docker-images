@@ -1,11 +1,11 @@
 FROM ubuntu-upstart:14.04
 MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
 
-ADD https://github.com/drunomics/docker-images/raw/master/ubuntu-ansible/ansible_1.9.4-1ppa%7Etrusty_all.deb  /root
+COPY deb  /root/deb
 # Install Ansible and Git.
 RUN apt-get update && \
     apt-get install python-support python-jinja2 python-yaml python-paramiko python-httplib2 python-crypto sshpass -y && \
-    dpkg -i  /root/ansible_1.9.4-1ppa~trusty_all.deb  && \
+    dpkg -i  /root/deb/ansible_1.9.4-1ppa~trusty_all.deb  && \
     echo '[local]\nlocalhost ansible_connection=local\n' > /etc/ansible/hosts && \
     apt-mark hold ansible
 
