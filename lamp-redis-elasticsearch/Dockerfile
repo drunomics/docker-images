@@ -20,3 +20,5 @@ RUN cd /root/docker/lamp-redis-elasticsearch && \
 
   # Clean tmp dirs.
   rm -rf /tmp/* /var/tmp/*
+
+VOLUME /var/lib/elasticsearch
