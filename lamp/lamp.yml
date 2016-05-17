@@ -1,6 +1,5 @@
 ---
 - hosts: local
-
   vars:
     base_rsyslogd_custom_init: true
     composer_path_env: true
