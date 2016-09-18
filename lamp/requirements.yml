@@ -3,6 +3,9 @@
 - src: https://github.com/drunomics/ansible-role-apache
   name: drunomics.apache
 
+- src: https://github.com/drunomics/ansible-role-apache-adminer
+  name: drunomics.apache-adminer
+
 - src: https://github.com/drunomics/ansible-role-maildev
   name: drunomics.maildev
 

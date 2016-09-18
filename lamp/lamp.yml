@@ -11,6 +11,7 @@
   roles: 
     - { role: drunomics.base, tags: base }
     - { role: drunomics.ssh, tags: ssh }
+    - { role: drunomics.apache-adminer, tags: adminer }
     - { role: drunomics.lamp, tags: lamp }
     - { role: drunomics.nullmailer, tags: nullmailer }
     - { role: drunomics.maildev-apache, tags: maildev }
