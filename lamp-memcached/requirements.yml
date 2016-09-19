@@ -1,8 +1,3 @@
 ---
-  # Make sure to use the latest version.
-- src: https://github.com/drunomics/ansible-role-php
-  name: drunomics.php
-  version: master
-
 - src: https://github.com/drunomics/ansible-role-memcached
   name: drunomics.memcached
