@@ -5,7 +5,7 @@ ADD requirements.yml /root/docker/lamp-memcached/
 ADD memcached.yml /root/playbooks/
 
 RUN cd /root/docker/lamp-memcached && \
- ansible-galaxy install -r requirements.yml --force && \
+ ansible-galaxy install -r requirements.yml --no-deps --force && \
 
   # Fix issues with connecting to upstart, see
   # https://github.com/docker/docker/issues/1024
