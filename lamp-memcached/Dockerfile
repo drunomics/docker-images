@@ -1,4 +1,4 @@
-FROM drunomics/lamp:latest
+FROM drunomics/lamp
 MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
 
 ADD requirements.yml /root/docker/lamp-memcached/
