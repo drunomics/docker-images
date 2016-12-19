@@ -4,6 +4,10 @@ MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
 ADD requirements.yml /root/docker/lamp-memcached/
 ADD memcached.yml /root/playbooks/
 
+# Workaround for build-problems on docker hub.
+# See https://github.com/ansible/ansible/issues/13652
+RUN rm -rf /etc/php5/mods-available/ansible.ini /etc/php5/mods-available/opcache.ini
+
 RUN cd /root/docker/lamp-memcached && \
  ansible-galaxy install -r requirements.yml --no-deps --force && \
 
