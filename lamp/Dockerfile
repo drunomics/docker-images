@@ -1,5 +1,5 @@
 FROM drunomics/ubuntu-ansible
-MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
+MAINTAINER drunomics GmbH <hello@drunomics.com>
 
 # Install Ansible and Git.
 RUN apt-get update && \

@@ -1,5 +1,5 @@
 FROM drunomics/lamp-redis:latest
-MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
+MAINTAINER drunomics GmbH <hello@drunomics.com>
 
 ADD requirements.yml /root/docker/lamp-redis-solr/
 ADD solr.yml /root/playbooks/

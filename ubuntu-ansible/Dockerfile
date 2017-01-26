@@ -1,5 +1,5 @@
 FROM ubuntu-upstart:14.04
-MAINTAINER Stefan Hageneder <stefan.hageneder@drunomics.com>
+MAINTAINER drunomics GmbH <hello@drunomics.com>
 
 # Install Ansible and Git.
 RUN apt-get update && \
