@@ -11,6 +11,9 @@ RUN cd /root/docker/lamp-redis-elasticsearch && \
   # https://github.com/docker/docker/issues/1024
   dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl && \
 
+  # Make sure apt sources are recent.
+  apt-get update && \
+
   # Run the playbooks.
   cd /root/playbooks && \
   ansible-playbook elasticsearch.yml && \
