@@ -6,3 +6,7 @@
 - src: https://github.com/drunomics/ansible-role-elasticsearch
   name: drunomics.elasticsearch
   version: elastic-1.x
+  
+# Use our fork for ansible 2.2. compatibility.
+- src: https://github.com/drunomics/ansible-elasticsearch
+  name: gpstathis.elasticsearch
