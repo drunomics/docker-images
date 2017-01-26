@@ -7,4 +7,4 @@ this image extends the [LAMP-REDIS](https://github.com/drunomics/docker-images/t
 * [drunomics.elasticsearch](https://github.com/drunomics/ansible-role-elasticsearch)
 
 
-(c) 2015 drunomics GmbH. /  MIT License 
+(c) 2017 drunomics GmbH. /  MIT License 
