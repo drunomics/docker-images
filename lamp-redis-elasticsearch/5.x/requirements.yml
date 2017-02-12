@@ -1,0 +1,7 @@
+---
+- src: https://github.com/drunomics/ansible-role-elasticsearch
+  name: drunomics.elasticsearch
+  version: master
+- src: https://github.com/drunomics/ansible-role-java
+  name: drunomics.java
+  version: master
