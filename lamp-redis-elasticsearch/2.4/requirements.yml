@@ -1,4 +1,4 @@
 ---
 - src: https://github.com/drunomics/ansible-role-elasticsearch
   name: drunomics.elasticsearch
-  version: master
+  version: elastic-2.x
