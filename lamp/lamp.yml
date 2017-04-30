@@ -17,6 +17,7 @@
     - { role: drunomics.maildev-apache, tags: maildev }
     - { role: kosssi.composer, tags: composer }
     - { role: drunomics.drush, tags: drush }
+    - { role: drunomics.nvm, tags: nvm }
 
   tasks:
     - name: Execute provision script.
