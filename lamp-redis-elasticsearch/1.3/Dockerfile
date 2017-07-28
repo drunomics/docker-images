@@ -7,6 +7,9 @@ ADD elasticsearch.yml /root/playbooks/
 RUN cd /root/docker/lamp-redis-elasticsearch && \
   ansible-galaxy install -r requirements.yml --force && \
 
+  # Hack to fix broken ansible role. Disables installing plugins.
+  echo "[]" > /etc/ansible/roles/gpstathis.elasticsearch/tasks/plugins.yml && \
+
   # Fix issues with connecting to upstart, see
   # https://github.com/docker/docker/issues/1024
   dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl && \
