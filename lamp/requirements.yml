@@ -41,9 +41,6 @@
 - src: https://github.com/drunomics/ansible-role-lamp
   name: drunomics.lamp
 
-- src: https://github.com/drunomics/ansible-role-nvm
-  name: drunomics.nvm
-
 - src: kosssi.composer
 
 
