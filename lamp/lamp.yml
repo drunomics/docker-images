@@ -20,6 +20,10 @@
     - { role: drunomics.drush, tags: drush }
 
   tasks:
+    - name: Ensure Node.js and npm are installed.
+      apt: "name=nodejs={{ nodejs_version|regex_replace('x', '') }}* state=present"
+      tags: nodejs
+
     - name: Execute provision script.
       shell: |
         {%- for command in provision_script -%}
