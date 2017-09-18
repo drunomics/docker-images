@@ -21,7 +21,11 @@
 
   tasks:
     - name: Ensure Node.js and npm are installed.
-      apt: "name=nodejs={{ nodejs_version|regex_replace('x', '') }}* state=present"
+      apt: >
+        name=nodejs={{ nodejs_version|regex_replace('x', '') }}*
+        state=present
+        force=yes
+        dpkg_options=force-downgrade
       tags: nodejs
 
     - name: Execute provision script.
