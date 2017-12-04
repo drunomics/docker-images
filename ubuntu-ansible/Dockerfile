@@ -4,7 +4,7 @@ MAINTAINER drunomics GmbH <hello@drunomics.com>
 # Install Ansible and Git.
 RUN apt-get update && \
     apt-get install python-support python-jinja2 python-yaml python-paramiko python-httplib2 python-crypto sshpass software-properties-common -y && \
-    add-apt-repository ppa:ansible/ansible && apt-get update && \
+    add-apt-repository ppa:ansible/ansible-2.3 && apt-get update && \
     apt-get install ansible -y  && \
     echo '[local]\nlocalhost ansible_connection=local\n' > /etc/ansible/hosts 
 
