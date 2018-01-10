@@ -8,6 +8,9 @@ RUN apt-get update && \
     apt-get install ansible -y  && \
     echo '[local]\nlocalhost ansible_connection=local\n' > /etc/ansible/hosts 
 
+# Ensure security updates are installed.
+RUN unattended-upgrade -d
+
 RUN mkdir /root/.ssh && \
   ssh-keyscan bitbucket.org  >> /root/.ssh/known_hosts && \
   ssh-keyscan github.com  >> /root/.ssh/known_hosts
