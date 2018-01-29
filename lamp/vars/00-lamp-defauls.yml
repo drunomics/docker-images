@@ -1,0 +1,7 @@
+# Vars file for lamp. Note that we do not use playbook vars here as they cannot
+# be overridden by inventory vars. This file will become inventore vars also.
+---
+tool_installer:
+  phapp:
+    url: https://github.com/drunomics/phapp-cli/releases/download/0.6.0-beta1/phapp.phar
+    version: 0.6.0-beta1

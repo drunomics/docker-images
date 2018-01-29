@@ -12,6 +12,7 @@ RUN mkdir -p /root/.ssh && \
 
 ADD requirements.yml /root/docker/lamp/
 ADD lamp.yml /root/playbooks/
+ADD vars/*.yml /etc/ansible/group_vars/all/
 
 RUN cd /root/docker/lamp && \
   ansible-galaxy install -r requirements.yml --force && \

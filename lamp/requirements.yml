@@ -41,6 +41,9 @@
 - src: https://github.com/drunomics/ansible-role-lamp
   name: drunomics.lamp
 
+- src: https://github.com/drunomics/ansible-role-tool-installer
+  name: drunomics.tool-installer
+
 - src: kosssi.composer
 
 

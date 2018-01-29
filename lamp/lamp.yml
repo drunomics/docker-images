@@ -17,6 +17,7 @@
     - { role: drunomics.apache-adminer, tags: adminer }
     - { role: SimpliField.node, tags: nodejs }
     - { role: kosssi.composer, tags: composer }
+    - { role: drunomics.tool-installer, tags: tools }
     - { role: drunomics.drush, tags: drush }
 
   tasks:
