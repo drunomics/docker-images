@@ -3,5 +3,5 @@
 ---
 tool_installer:
   phapp:
-    url: https://github.com/drunomics/phapp-cli/releases/download/0.6.0-beta1/phapp.phar
-    version: 0.6.0-beta1
+    url: https://github.com/drunomics/phapp-cli/releases/download/0.6.2/phapp.phar
+    version: 0.6.2
