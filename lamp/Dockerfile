@@ -35,3 +35,7 @@ RUN cd /root/docker/lamp && \
   rm -f /var/lib/mysql/ib_logfile*
 
 VOLUME /var/lib/mysql
+
+# Prepare default web root.
+RUN mkdir /srv/default && ln -s vcs/$WEB_DIRECTORY /srv/default/web
+WORKDIR /srv/default/vcs
